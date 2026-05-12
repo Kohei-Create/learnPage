@@ -10,7 +10,7 @@
     }
 }
 
-.foot-top-link p {
+.foot-top-link {
     color: var(--txt-color);
     font-size: 20px;
 }
@@ -19,7 +19,7 @@
 
 }
 
-.hoot-list {
+.foot-list {
     display: flex;
     gap: 2rem;
 }
