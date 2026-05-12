@@ -1,0 +1,14 @@
+{
+    "parts": [
+        {
+            "id": "#header",
+            "url": "header.html",
+            "callback": "setNav"
+        },
+        {
+            "id": "#footer",
+            "url": "footer.html",
+            "callback": null
+        }
+    ]
+}
