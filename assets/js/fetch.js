@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
         // 1. 設定ファイルの読み込み
-        const configResponse = await fetch('./assets/data/index.json');
+        const configResponse = await fetch('./assets/data/nav.json');
         if(!configResponse.ok) throw new Error('Config load failed');
         const config = await configResponse.json();
 
