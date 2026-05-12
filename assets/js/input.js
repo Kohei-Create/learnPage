@@ -38,14 +38,10 @@ const getWeather = async (icons, layout) => {
         
         const areaName = data[0].publishingOffice;
         const reportText = data[0].timeSeries[0].areas[0].weathers[0] || "予報なし";
-        console.log('取得情報',data[0]);
-        
-        console.log('取得データ',areaName,reportText);
 
         const matchedIcon = icons.find(icon => reportText.includes(icon.text)) || icons[0];
 
         const weatherTarget = document.getElementById('weather-info');
-        console.log('weather-infoが見つかりました');
         if (!weatherTarget) return;
 
         weatherTarget.innerHTML = '';
