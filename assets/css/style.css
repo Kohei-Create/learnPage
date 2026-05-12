@@ -51,7 +51,7 @@
     font-weight: 600;
 }
 
-.sign-txt {
+.signText {
     font-size: 17px;
     font-weight: 500;
     color: var(--sub-color);
@@ -62,7 +62,7 @@
     background-color: var(--sub-color);
 }
 
-.sign-link:hover .sign-txt {
+.sign-link:hover .signText {
     transition: .3s ease;
     color: var(--accent-color);
 }
@@ -379,4 +379,20 @@ form {
     margin: 1rem auto 0;
     width: 100%;
     max-width: fit-content;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.favicon {
+    width: 30px;
+    height: auto;
+}
+
+.flex-text {
+
 }

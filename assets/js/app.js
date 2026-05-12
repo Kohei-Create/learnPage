@@ -65,6 +65,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     } catch (e) {
         console.error('config error', e);
+        
+        const container = document.querySelector('.card-inner');
+        if (container) {
+            container.innerHTML = `<p class=error-msg style="color: red; font-size: 17px; width: fit-content; margin: 0 auto; ">カードの読み込みに失敗しました、後でもう一度お試しください。</p>`;
+        }
     }
 });
 

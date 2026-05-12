@@ -1,21 +1,27 @@
 <?php
-$email = $_POST['email'];
-$password = $_POST['password'];
-
 session_start();
-$email = $_POST['email'];
-$password = $_POST['password'];
+try {
+    $dsn = 'mysql:host=localhost:3306;dbname=form_db;charset=utf8';
+    $pdo = new PDO($dsn, 'root', '');
+    
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
+    $stmt->bindValue(':email', $_POST['email']);
+    $stmt->execute();
+    $user = $stmt->fetch();
+    var_dump($user);
+    var_dump($_POST['password']);
 
-$correct_hash = '$2y$10$7R6v7S1C1A5p7P8v9Q0r1S2t3U4v5W6x7Y8z9A0b1C2d3E4f5G6h';
-$correct_email = 'was914hs@gmail.com';
-
-if ($email === $correct_email && password_verify($password, $correct_hash)) {
-    session_regenerate_id(true);
-    $_SESSION['user_name'] = 'was914hs';
-    header('Location: index.html');
-    exit;
-    } else {
-        header('Location: form.html?error=1');
+    if ($user && password_verify($_POST['password'], $user['password'])) {
+        session_regenerate_id(true);
+        $_SESSION['user_name'] = $user['name'];
+        header('Location: index.html');
         exit;
+    } else {
+        exit('メールアドレスまたはパスワードが違います。');
     }
-    ?>
+
+    } catch (PDOException $e) {
+        exit('データベース接続失敗' . $e->getMessage());
+    }
+    echo password_hash("Videocreate_92", PASSWORD_DEFAULT);
+?>
