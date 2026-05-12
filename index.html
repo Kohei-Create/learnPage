@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>実験場</title>
+    <script>
+        window.addEventListener('load', () => {
+            document.body.classList.add('is-show');
+        });
+    </script>
+</head>
+
+<body class="fade">
+    <div id="header"></div>
+    <main>
+        <h1 class="top-txt">実験場</h1>
+        <div class="rectangle"></div>
+        <button id="btn" class="btn">Button</button>
+        <section class="section login">
+            <div class="login-block">
+                <a href="form.html" class="form-link">
+                    <p class="form-txt">
+                        form
+                    </p>
+                </a>
+                <a href="form.html" class="sign-link">
+                    <p class="sign-txt">サインイン</p>
+                </a>
+            </div>
+        </section>
+        <section class="section api">
+            <div id="weather-info"></div>
+        </section>
+        <section class="section card-flex">
+            <div class="card-wrap">
+                <button id="prev">&lt;</button>
+                <button id="next">&gt;</button>
+                <div class="card-inner">
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="footer"></div>
+    <script src="assets/js/fetch.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+@import url(base.css);
+@import url(header.css);
+@import url(footer.css);
+
+.section {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 5rem auto 0;
+    text-align: left;
+}
+
+.question {
+    background-color: #ccc;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+    padding: 20px 1rem;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    align-items: stretch;
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+}
+
+.ques-txt {
+    margin: 0 auto;
+    width: fit-content;
+    color: var(--sub-color);
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 1rem;
+    width: 100%;
+    max-width: fit-content;
+    flex-wrap: wrap;
+}
+
+.primary {
+    background-color: var(--accent-color);
+    margin: 0 auto;
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: background-color .3s ease;
+    text-align: center;
+    font-size: var(--default-font-size);
+    font-weight: 700;
+    color: var(--sub-color);
+}
+
+.primary:hover {
+    background-color: var(--accent-hover-color);
+}

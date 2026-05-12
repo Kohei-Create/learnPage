@@ -1,0 +1,43 @@
+{
+    "theme": {
+        "background": "#fff",
+        "shadowColor": "rgba(0, 0, 0, .14)",
+        "borderColor": "#ccc",
+        "accentColor": "#00acee"
+    },
+    "parts": [
+        {
+            "id": "#header",
+            "url": "header.html",
+            "callback": "setNav"
+        },
+        {
+            "id": "#footer",
+            "url": "footer.html",
+            "callback": null
+        }
+    ],
+    "icons": [
+        { "text": "曇", "src": "./assets/images/cloud.svg" },
+        { "text": "晴", "src": "./assets/images/sun.svg" },
+        { "text": "雨", "src": "./assets/images/rain.svg" },
+        { "text": "雪", "src": "./assets/images/snow.svg" }
+    ],
+    "layout": [
+        {
+            "tag": "img",
+            "class": "weather-icon",
+            "type": "icon"
+        },
+        {
+            "tag": "span",
+            "class": "area",
+            "type": "area"
+        },
+        {
+            "tag": "span",
+            "class": "report",
+            "type": "report"
+        }
+    ]
+}

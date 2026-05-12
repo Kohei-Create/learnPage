@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./assets/images/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/form.css">
+    <title>form</title>
+    <script>
+        window.addEventListener('load', () => {
+            document.body.classList.add('is-show');
+        });
+    </script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <main>
+        <form action="login.php" method="POST">
+            <div class="form-block">
+                <div class="field">
+                    <label for="email" class="form-label">
+                        IDを入力してください
+                    </label>
+                    <input required type="email" name="email" id="email" class="input" placeholder="email or username" autocomplete="username">
+                </div>
+                <div class="field-pass">
+                    <label for="password" class="form-label">
+                        パスワードを入力してください
+                    </label>
+                    <div class="input-wrap">
+                        <input required type="password" name="password" id="password" class="input-pass" placeholder="password" autocomplete="current-password">
+                        <img src="assets/images/eye.svg" alt="非表示" class="eye-close d-none">
+                        <img src="assets/images/fa-eye.svg" alt="表示" class="eye-open">
+                    </div>
+                </div>
+                <div class="btn-wrap">
+                    <button type="submit" class="btn">ログイン</button>
+                </div>
+                <div class="field-link">
+                    <a href="" class="rink">
+                        <p class="link-txt">パスワードをお忘れの方はこちら</p>
+                    </a>
+                    <a href="" class="rink">
+                        <p class="link-txt">新規登録はこちら</p>
+                    </a>
+                </div>
+            </div>
+        </form>
+    </main>
+    <div id="footer"></div>
+    <script src="assets/js/fetch.js"></script>
+    <script src="assets/js/input.js"></script>
+    <script src="assets/js/login.js"></script>
+</body>
+
+</html>

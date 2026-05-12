@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --accent-color: #00acee;
+    --accent-hover-color: #008fc7;
+    --bg-light: #38f2ff;
+    --border-color: #ddd;
+    --container-width: 1200px;
+    --header-bg-color: #fff;
+    --header-height: 72px;
+    --default-font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    --default-font-size: 15px;
+    --default-line-height: 1.5;
+    --default-min-height: 100vh;
+    --radius-bg-color: #1b5cb1;
+    --shadow-main-color: rgba(0, 0, 0, .14);
+    --shadow-sub-color: rgba(0, 0, 0, .2);
+    --sub-color: #fff;
+    --txt-color: #333;
+}
+
+body {
+    color: var(--txt-color);
+    min-width: 320px;
+    font-family: var(--default-font-family);
+    line-height: var(--default-line-height);
+    font-size: var(--default-font-size);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-top: var(--header-height);
+    min-height: var(--default-min-height);
+}
+
+a,img,span {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: var(--txt-color);
+}
+
+ul {
+    list-style: none;
+}
