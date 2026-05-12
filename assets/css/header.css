@@ -24,7 +24,10 @@
 }
 
 .head-top-link {
+    font-size: 20px;
+    font-weight: 900;
     width: fit-content;
+    transition: .3s ease;
     position: relative;
 }
 
@@ -44,12 +47,6 @@
 .head-top-link:hover::after {
     transform: scaleX(1);
     transform-origin: left;
-}
-
-.head-top-link p {
-    font-size: 20px;
-    font-weight: 900;
-    transition: .3s ease;
 }
 
 .head-top-link p:hover {
