@@ -11,6 +11,29 @@
 <body class="fade">
     <div id="header"></div>
     <main>
+        <form action="" method="POST">
+            <div class="form-table">
+                <div class="name-block">
+                    <div class="field-name">
+                        <label for="family-name">姓を入力してください</label>
+                        <input class="input" type="text" name="family-name" id="family-name" placeholder="family name" autocomplete="family-name">
+                    </div>
+                    <div class="field-name">
+                        <label for="first-name">名前を入力してください</label>
+                        <input class="input" type="text" name="first-name" id="first-name" placeholder="first name" autocomplete="first-name">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="email">emailを入力してください</label>
+                    <input class="email" type="email" name="email" id="email" placeholder="12345@example.co.jp" autocomplete="email">
+                </div>
+                <div class="field">
+                    <label for="textarea">お問い合わせ</label>
+                    <textarea class="area" name="textarea" id="textarea" cols="30" rows="10" placeholder="お問い合わせ内容の詳細をご入力ください" autocomplete="on"></textarea >
+                </div>
+                <input class="submit" type="submit" value="submit">
+            </div>
+        </form>
     </main>
     <div id="footer"></div>
     <script src="assets/js/fade.js"></script>
