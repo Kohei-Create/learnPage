@@ -39,7 +39,7 @@ const flex = document.querySelector('.flex');
 
 quiz[0].answers.forEach((answers) => {
     let button = document.createElement('button');
-    button.innerText = answers;
+    button.textContent = answers;
     button.classList.add('primary');
     flex.appendChild(button);
 });
