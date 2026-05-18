@@ -1,14 +1,19 @@
 function createNav(item) {
-    const el = document.createElement(item.tag); //タグの作成
-    if (item.class) el.className = item.class; // クラスの付与
-    if (item.url) el.href = item.url // itemが(a タグなら)URLを付与する
-    if (item.text) el.textContent = `${item.text}`; // 中の文字を付与
+    const { tag, text, children, id, type, class: className, for: htmlFor, href, src, alt, target, url, ...attrs } = item;
+    const el = document.createElement(item.tag);
 
-    if (item.children) {
-        item.children.forEach(child => {
-            const childEl = createNav(child);
-            el.appendChild(childEl);
-        });
+    Object.assign(el, attrs);
+    if (src) el.src = src;
+    if (id) el.id = id;
+    if (className) el.className = className;
+    if (htmlFor) el.htmlFor = htmlFor;
+    if (type) el.type = type;
+    if (href) el.href = href;
+    
+    if (text) el.textContent = text;
+
+    if (children) {
+        children.forEach(child => el.append(createNav(child)));
     }
     return el; // 出来た要素を返す
 
@@ -17,7 +22,7 @@ function createNav(item) {
 document.addEventListener('DOMContentLoaded', async () => {
 
     const setNav = () => {
-        console.log('Nav initialized');
+        console.error('Nav initialized');
     };
 
     try {
@@ -26,18 +31,27 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!configResponse.ok) throw new Error('Config load failed');
         const config = await configResponse.json();
 
-        config.headerContent.filter(item => item.tag === 'header' || item.tag === 'nav').forEach(item => {
-            const el = createNav(item);
-            document.getElementById('header').appendChild(el);
-        });
+        config.parts.forEach(part => {
 
-        config.footerContent.forEach(item => {
-            const el = createNav(item);
-            document.getElementById('footer').appendChild(el);
+            const contentContainerId = part.id.replace('#','');
+            const container = document.getElementById(contentContainerId);
+
+            const dataKey = part.dataKey;
+            const dataList = config[dataKey];
+
+            if (container && dataList) {
+                dataList.forEach(data => container.appendChild(createNav(data)))
+            }
         });
 
     } catch (e) {
         console.error(e)
+
+        const errorBox = document.createElement('div');
+        errorBox.className = 'error-box';
+        errorBox.textContent = 'データの読み込みに失敗しました。後でもう一度お試しください。';
+
+        document.body.appendChild(errorBox);
     }
 
 });
