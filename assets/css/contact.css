@@ -14,3 +14,84 @@
     opacity: 1;
     transform: translateY(0);
 }
+
+form {
+    width: 100%;
+    padding: 0 1rem;
+    text-align: left;
+}
+
+.form-table {
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--shadow-main-color);
+}
+
+.name-block {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.field-name,
+.field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1rem 0 0;
+}
+
+label {
+    width: fit-content;
+}
+
+.input,
+.email,
+area {
+    display: block;
+    padding: 10px 0;
+    border-radius: 7px;
+    border: 1px solid var(--border-color);
+}
+
+.submit {
+    background-color: var(--sub-color);
+    display: block;
+    margin: 1rem auto 0;
+    padding: 1rem;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 7px;
+    border: 1px solid var(--border-color);
+    font-size: 17px;
+    font-weight: 700;
+    box-shadow: 0 4px 10px var(--shadow-main-color);
+    transform: scale(1);
+    transition: transform .3s ease, background-color .3s ease, color .3s ease, box-shadow .3s ease;
+}
+
+.submit:hover {
+    box-shadow: inset 4px 4px 10px var(--shadow-main-color);
+    background-color: var(--accent-color);
+    color: var(--sub-color);
+    transform: scale(.95);
+}
+
+label,
+.input,
+.email,
+.submit {
+    cursor: pointer;
+}
+
+.input:focus,
+.email:focus,
+.area:focus {
+    outline: none;
+    border: 2px solid var(--accent-color);
+}
