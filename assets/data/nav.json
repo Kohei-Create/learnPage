@@ -1,28 +1,28 @@
 {
     "parts": [
-        { "id": "#header", "callback": "setNav" },
-        { "id": "#footer", "callback": null }
+        { "id": "#header", "dataKey": "headerContent", "callback": "setNav" },
+        { "id": "#footer", "dataKey": "footerContent", "callback": null }
     ],
     "headerContent": [
         { "tag": "header", "class": "header", "children":[
-            { "tag": "a", "class": "head-top-link", "url": "index.html", "text": "sandbox" },
+            { "tag": "a", "class": "head-top-link", "href": "index.html", "text": "sandbox" },
             { "tag": "nav", "class": "nav", "children": [
                 { "tag": "ul", "class": "nav-list", "children": [
                     { "tag": "li", "class": "na-item", "children":
                     [
-                        { "tag": "a", "class": "nav-link", "url": "form.html", "text": "FORM" }
+                        { "tag": "a", "class": "nav-link", "href": "form.html", "text": "FORM" }
                     ]},
                     { "tag": "li", "class": "na-item", "children":
                     [
-                        { "tag": "a", "class": "nav-link", "url": "quiz.html", "text": "QUIZ" }
+                        { "tag": "a", "class": "nav-link", "href": "quiz.html", "text": "QUIZ" }
                     ]},
                     { "tag": "li", "class": "na-item", "children":
                     [
-                        { "tag": "a", "class": "nav-link", "url": "todo.html", "text": "TODO" }
+                        { "tag": "a", "class": "nav-link", "href": "todo.html", "text": "TODO" }
                     ]},
                     { "tag": "li", "class": "na-item", "children":
                     [
-                        { "tag": "a", "class": "nav-link", "url": "contact.html", "text": "CONTACT" }
+                        { "tag": "a", "class": "nav-link", "href": "contact.html", "text": "CONTACT" }
                     ]}
                 ] }
             ]}
@@ -31,20 +31,20 @@
     ],
     "footerContent": [
         { "tag": "footer", "class": "footer", "children": [
-            { "tag": "a", "class": "foot-top-link", "url": "index.html", "text": "sandbox" },
+            { "tag": "a", "class": "foot-top-link", "href": "index.html", "text": "sandbox" },
             { "tag": "nav", "class": "foot-nav", "children": [
                 { "tag": "ul", "class": "foot-list", "children": [
                     { "tag": "li", "class": "foot-item", "children": [
-                        { "tag": "a", "class": "foot-link", "url": "form.html", "text": "FORM" }
+                        { "tag": "a", "class": "foot-link", "href": "form.html", "text": "FORM" }
                     ]},
                     { "tag": "li", "class": "foot-item", "children": [
-                        { "tag": "a", "class": "foot-link", "url": "quiz.html", "text": "QUIZ" }
+                        { "tag": "a", "class": "foot-link", "href": "quiz.html", "text": "QUIZ" }
                     ]},
                     { "tag": "li", "class": "foot-item", "children": [
-                        { "tag": "a", "class": "foot-link", "url": "todo.html", "text": "TODO" }
+                        { "tag": "a", "class": "foot-link", "href": "todo.html", "text": "TODO" }
                     ]},
                     { "tag": "li", "class": "foot-item", "children": [
-                        { "tag": "a", "class": "foot-link", "url": "contact.html", "text": "CONTACT" }
+                        { "tag": "a", "class": "foot-link", "href": "contact.html", "text": "CONTACT" }
                     ]}
                 ]}
             ]}

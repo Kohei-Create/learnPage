@@ -12,20 +12,8 @@
         { "text": "雪", "src": "./assets/images/snow.svg" }
     ],
     "layout": [
-        {
-            "tag": "img",
-            "class": "weather-icon",
-            "type": "icon"
-        },
-        {
-            "tag": "span",
-            "class": "area",
-            "type": "area"
-        },
-        {
-            "tag": "span",
-            "class": "report",
-            "type": "report"
-        }
+        {"tag": "img","class": "weather-icon","type": "icon"},
+        {"tag": "span","class": "area","type": "area"},
+        {"tag": "span","class": "report","type": "report"}
     ]
 }
