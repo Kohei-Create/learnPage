@@ -93,10 +93,6 @@ form {
     display: none;
 }
 
-.eye-open {
-
-}
-
 .field-link {
     display: flex;
     flex-direction: column;
@@ -124,6 +120,8 @@ form {
     position: relative;
     font-size: 17px;
     font-weight: 700;
+    transform: scale(1);
+    transition: .3s ease;
 }
 
 .btn:focus {
@@ -132,8 +130,8 @@ form {
 }
 
 .btn:hover {
-    transition: box-shadow .3s ease;
-    box-shadow: none;
+    transform: scale(.95);
+    box-shadow: inset 4px 4px 10px var(--shadow-main-color);
 }
 
 label,
