@@ -68,7 +68,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         
         const container = document.querySelector('.card-inner');
         if (container) {
-            container.innerHTML = `<p class=error-msg style="color: red; font-size: 17px; width: fit-content; margin: 0 auto; ">カードの読み込みに失敗しました、後でもう一度お試しください。</p>`;
+            const errorMsg = document.createElement('p');
+            errorMsg.className = 'error-msg';
+            errorMsg.textContent = 'カードの読み込みに失敗しました、後でもう一度お試しください。';
+            container.appendChild(errorMsg);
         }
     }
 });
