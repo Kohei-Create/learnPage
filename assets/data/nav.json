@@ -7,6 +7,13 @@
         { "tag": "header", "class": "header", "children":[
             { "tag": "a", "class": "head-top-link", "href": "index.html", "text": "sandbox" },
             { "tag": "nav", "class": "nav", "children": [
+                {"tag": "input", "type": "checkbox", "id": "nav-toggle", "class": "nav-toggle"},
+                {"tag": "label", "for": "nav-toggle", "class": "nav-btn", "children": [
+                    {"tag": "span", "class": "nav-btn span"},
+                    {"tag": "span", "class": "nav-btn span"},
+                    {"tag": "span", "class": "nav-btn span"}
+                ]},
+                {"tag": "label", "for": "nav-toggle", "class": "nav-overlay"},
                 { "tag": "ul", "class": "nav-list", "children": [
                     { "tag": "li", "class": "na-item", "children":
                     [
