@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded',() => {
 
     try {
         const response = await fetch('./assets/data/index.json')
-        const {  }
+    } catch (e) {
+        console.error (e)
     }
 });
