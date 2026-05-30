@@ -1,14 +1,13 @@
 function createNav(item) {
-    const { tag, text, children, id, type, class: className, for: htmlFor, href, src, alt, target, url, ...attrs } = item;
+    const { tag, text, children, ...attrs } = item;
     const el = document.createElement(item.tag);
 
-    Object.assign(el, attrs);
-    if (src) el.src = src;
-    if (id) el.id = id;
-    if (className) el.className = className;
-    if (htmlFor) el.htmlFor = htmlFor;
-    if (type) el.type = type;
-    if (href) el.href = href;
+    Object.entries(attrs).forEach(([key, value]) => {
+
+        if (value) {
+            el.setAttribute(key, value);
+        }
+    });
     
     if (text) el.textContent = text;
 
@@ -34,7 +33,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         config.parts.forEach(part => {
 
             const contentContainerId = part.id.replace('#','');
-            const container = document.getElementById(contentContainerId);
+            const container = document.querySelector(part.id);
 
             const dataKey = part.dataKey;
             const dataList = config[dataKey];
