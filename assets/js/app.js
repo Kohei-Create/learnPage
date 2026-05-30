@@ -10,6 +10,17 @@ function createCard(item) {
     return el;
 }
 
+const wrap = document.querySelector('.rect-wrap');
+
+const clickBtn = document.querySelector('button');
+
+if (clickBtn) {
+    clickBtn.addEventListener('click', () => {
+        const rectBox = document.querySelector('.rectangle');
+        rectBox.classList.toggle('is-active');
+    });
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
     const container = document.querySelector('.card-inner');
 
@@ -28,8 +39,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         let counter = 0;
 
         const inner = document.querySelector('.card-inner');
-        const prevBtn = document.querySelector('#prev');
-        const nextBtn = document.querySelector('#next');
+        const prevBtn = document.getElementById('prev');
+        const nextBtn = document.getElementById('next');
 
         function updateSlider() {
             const card = document.querySelector('.card');
@@ -42,26 +53,49 @@ document.addEventListener('DOMContentLoaded', async () => {
             let moveDistance = (cardWidth + gapValue) * counter;
             inner.style.transform = `translateX(-${moveDistance}px)`;
 
-            prevBtn.style.display = (counter === 0) ? 'none' : 'flex';
-            nextBtn.style.display = (counter === cardCount - 3) ? 'none' : 'flex';
         }
 
         nextBtn.addEventListener('click', () => {
-            if (counter < cardCount - 3) {
+            if (counter < cardCount +1) {
                 counter++;
-                updateSlider();
+            } else {
+                counter = 0;
             }
+            updateSlider();
+            resetAutoSlide();
         });
 
         prevBtn.addEventListener('click', () => {
             if (counter > 0) {
                 counter--;
                 updateSlider();
+                resetAutoSlide();
             }
         });
 
         updateSlider();
 
+        let autoSlideId
+
+        function startAutoSlide() {
+            autoSlideId = setInterval(() => {
+                if (counter < cardCount +1) {
+                counter++;
+                } else {
+                    counter = 0;
+                }
+                updateSlider();
+            }, 4000);
+        }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlideId);
+            startAutoSlide();
+        }
+
+        startAutoSlide();
+
+        updateSlider();
 
     } catch (e) {
         console.error('config error', e);
@@ -75,11 +109,3 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 });
-
-//btn
-const button = document.querySelector('.btn');
-if (button) {
-    button.addEventListener('click', () => {
-        button.classList.toggle('active-color');
-    });
-}
