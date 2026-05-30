@@ -27,6 +27,11 @@
     --txt-color: #333;
 }
 
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+}
+
 body {
     color: var(--txt-color);
     min-width: 320px;

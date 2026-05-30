@@ -78,46 +78,43 @@
 
 .rectangle {
     background-color: #fff;
-    width: 200px;
+    margin: 2rem auto 0;
+    width: 300px;
     height: 50px;
-    margin: 2rem auto;
-    border: 2px solid #00acee;
     position: relative;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s ease, background-color .3s ease;
 }
 
-.rectangle::after {
-    background-color: #00acee;
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 50px;
+.rectangle.is-active {
+    background-color: var(--accent-color);
+    transform: scaleX(1);
+}
+
+.rectangle:not.is-active {
+    background-color: var(--accent-color);
     transform: scaleX(0);
     transform-origin: right;
-    transition: transform .3s ease-in-out;
 }
 
-.rectangle:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-.btn {
-    background-color: var();
+.click-btn {
     display: block;
-    margin: 1rem auto;
-    width: 200px;
-    padding: 15px 20px;
-    box-shadow: 0 4px 20px var(--shadow-main-color);
-    border: 1px solid #eee;
-    border-radius: 50px;
-    font-weight: 600;
+    margin: 2rem auto 1rem;
+    padding: 10px 0;
+    width: 150px;
     font-size: 17px;
+    font-weight: 700;
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    box-shadow: 0 4px 10px var(--shadow-main-color);
 }
 
-.btn.active-color {
+.click-btn.is-active {
     box-shadow: inset 4px 4px 8px rgba(0, 0, 0, .2);
-    background-color: #bbb;
+    background-color: var(--sub-color);
     color: var(--sub-color);
+    transform: scale(.95);
 }
 
 /* section class="card-flex" */
@@ -138,6 +135,7 @@
 
     @media (max-width:700px) {
         overflow-x: auto;
+        scrollbar-width: none;
     }
 }
 
@@ -145,8 +143,8 @@
     background-color: rgba(0, 0, 0, 0);
     display: flex;
     flex-direction: row;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     justify-content: center;
     align-items: center;
     z-index: 10;
@@ -160,7 +158,7 @@
     transform: translate(-50%,-50%);
     top: 50%;
 
-    @media (max-width:650px) {
+    @media (max-width:700px) {
         display: none;
     }
 }
@@ -201,7 +199,7 @@
     scroll-snap-align: center;
 
     @media (max-width:600px) {
-        min-width: 300px;
+        min-width: 260px;
     }
 }
 
