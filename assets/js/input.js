@@ -48,10 +48,17 @@ const getWeather = async (icons, layout) => {
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         const configResponse = await fetch('./assets/data/index.json');
+        if (!configResponse.ok) throw new Error('Config Load failed'); 
         const { icons, layout } = await configResponse.json();
         
         await getWeather(icons, layout);
     } catch (e) {
         console.error('Setting Load to Error', e);
+
+        const errorBox = document.createElement('p');
+        errorBox.className = 'error-box';
+        errorBox.textContent = '情報が取得できませんでした。後でもう一度お試しください。';
+
+        document.body.appendChild(errorBox);
     }
 });
